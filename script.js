@@ -6,7 +6,7 @@ document.getElementById('enterButton').addEventListener('click', function() {
     let loginPage = document.getElementById('loginPage');
     let secretPage = document.getElementById('secretPage');
 
-    if (emailField.value === 'aidenhosseini@outlook.de') {
+    if (emailField.value === 'flappy@gmail.com') {
         // Navigate to the secret page
         loginPage.style.display = 'none';
         secretPage.style.display = 'flex';
