@@ -15,3 +15,7 @@ TrollLoginMaster is a hilarious prank login page designed to mess with users' mi
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/TrollLoginMaster.git
+
+## Preview
+   ```bash
+ https://htmlpreview.github.io/?https://github.com/AH-PERRY-O/TrollLoginMaster/blob/main/index.html
