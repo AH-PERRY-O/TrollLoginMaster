@@ -16,6 +16,11 @@
             align-items: center;
             height: 100vh;
             color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #151515;
+            color: #f5f5f7;
         }
         .container {
             background-color: white;
@@ -24,6 +29,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode .container {
+            background-color: #333;
+            color: #f5f5f7;
         }
         h1 {
             font-weight: 600;
@@ -38,11 +48,17 @@
             border-radius: 8px;
             width: 100%;
             box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         input:focus {
             border-color: #0071e3;
             outline: none;
             box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.2);
+        }
+        body.dark-mode input {
+            background-color: #444;
+            color: #f5f5f7;
+            border-color: #555;
         }
         #message {
             color: #d32f2f;
@@ -65,13 +81,21 @@
             cursor: pointer;
             width: 100%;
             box-sizing: border-box;
+            transition: background-color 0.3s;
         }
         button:hover {
             background-color: #005bb5;
         }
         #secretPage {
             display: none;
-            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
         }
         .flappyBird {
             display: flex;
@@ -82,6 +106,38 @@
         canvas {
             background-color: #f0f0f0;
             border: 1px solid #ccc;
+        }
+        #pauseScreen, #gameOverScreen {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .pause-button, .resume-button, .back-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0071e3;
+            color: white;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .pause-button:hover, .resume-button:hover, .back-button:hover {
+            background-color: #005bb5;
+        }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -94,11 +150,19 @@
         <div id="message"></div>
         <img id="smartBrain" src="smart_brain_meme.jpg" alt="Smart Brain Meme">
     </div>
-    <div id="secretPage">
-        <div class="flappyBird">
-            <canvas id="flappyBirdCanvas" width="320" height="480"></canvas>
+    <div id="secretPage" class="flappyBird">
+        <canvas id="flappyBirdCanvas" width="800" height="600"></canvas>
+        <div id="pauseScreen">
+            <button class="resume-button" id="resumeButton">Resume</button>
+            <button class="back-button" id="backButton">Back to Login</button>
         </div>
+        <div id="gameOverScreen">
+            <button class="resume-button" id="restartButton">Restart</button>
+            <button class="back-button" id="backToLoginButton">Back to Login</button>
+        </div>
+        <button class="pause-button" id="pauseButton">Pause</button>
     </div>
+    <img src="moon-icon.png" alt="Toggle Dark Mode" id="darkModeToggle" class="dark-mode-toggle">
     <script src="script.js"></script>
     <script src="flappybird.js"></script>
 </body>
