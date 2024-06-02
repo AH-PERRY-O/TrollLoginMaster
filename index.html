@@ -69,17 +69,37 @@
         button:hover {
             background-color: #005bb5;
         }
+        #secretPage {
+            display: none;
+            padding: 20px;
+        }
+        .flappyBird {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        canvas {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="loginPage">
         <h1>Login</h1>
-        <input type="text" id="email" placeholder="Email" readonly>
+        <input type="text" id="email" placeholder="Email">
         <input type="password" id="password" placeholder="Type Password">
         <button id="enterButton">Enter</button>
         <div id="message"></div>
         <img id="smartBrain" src="smart_brain_meme.jpg" alt="Smart Brain Meme">
     </div>
+    <div id="secretPage">
+        <div class="flappyBird">
+            <canvas id="flappyBirdCanvas" width="320" height="480"></canvas>
+        </div>
+    </div>
     <script src="script.js"></script>
+    <script src="flappybird.js"></script>
 </body>
 </html>
