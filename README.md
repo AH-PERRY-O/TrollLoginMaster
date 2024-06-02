@@ -9,6 +9,7 @@ TrollLoginMaster is a hilarious prank login page designed to mess with users' mi
   - Typing "password" displays "Try again".
   - Typing "again" displays "Wrong password, try again later".
   - Typing "again later" displays the smart brain meme.
+-Typing "flappy@gmail.com" will lead you to a buggy version of flappy bird
 - Simple and clean HTML, CSS, and JavaScript setup.
 
 ## Usage
