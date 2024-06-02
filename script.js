@@ -6,10 +6,10 @@ document.getElementById('enterButton').addEventListener('click', function() {
     let loginPage = document.getElementById('loginPage');
     let secretPage = document.getElementById('secretPage');
 
-    if (emailField.value === 'aidenhosseini@hg.schulserver.de') {
+    if (emailField.value === 'aidenhosseini@outlook.de') {
         // Navigate to the secret page
         loginPage.style.display = 'none';
-        secretPage.style.display = 'block';
+        secretPage.style.display = 'flex';
         initializeFlappyBird(); // Initialize the Flappy Bird game
     } else {
         if (passwordField.value === 'password') {
@@ -25,3 +25,23 @@ document.getElementById('enterButton').addEventListener('click', function() {
         }
     }
 });
+
+document.getElementById('darkModeToggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        document.getElementById('darkModeToggle').src = 'sun-icon.png';
+    } else {
+        document.getElementById('darkModeToggle').src = 'moon-icon.png';
+    }
+});
+
+document.getElementById('backButton').addEventListener('click', function() {
+    document.getElementById('secretPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'block';
+});
+
+document.getElementById('backToLoginButton').addEventListener('click', function() {
+    document.getElementById('secretPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'block';
+});
+
