@@ -53,10 +53,7 @@ document.getElementById('backToLoginButtonFromCreated').addEventListener('click'
     document.getElementById('loginPage').style.display = 'block';
 });
 
-function sendEmail(name, email, password) {
-    // Mock email sending
-    console.log(`Sending email: ${name} tried to create an account with ${email} and password ${password}`);
-    alert(`Email sent to aidenhosseini@hg.schulserver.de with details: \nName: ${name}\nEmail: ${email}\nPassword: ${password}`);
+
 }
 
 // Dark mode toggle
