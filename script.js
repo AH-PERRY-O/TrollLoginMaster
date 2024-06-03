@@ -6,7 +6,7 @@ document.getElementById('enterButton').addEventListener('click', function() {
     let loginPage = document.getElementById('loginPage');
     let secretPage = document.getElementById('secretPage');
 
-    if (emailField.value === 'flappy@gmail.com') {
+    if (emailField.value === 'aidenhosseini@outlook.de') {
         // Navigate to the secret page
         loginPage.style.display = 'none';
         secretPage.style.display = 'flex';
@@ -26,21 +26,45 @@ document.getElementById('enterButton').addEventListener('click', function() {
     }
 });
 
+document.getElementById('registerButton').addEventListener('click', function() {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('registerPage').style.display = 'block';
+});
+
+document.getElementById('registerSubmitButton').addEventListener('click', function() {
+    let nameField = document.getElementById('regName').value;
+    let emailField = document.getElementById('regEmail').value;
+    let passwordField = document.getElementById('regPassword').value;
+
+    // Mock sending an email
+    sendEmail(nameField, emailField, passwordField);
+
+    document.getElementById('registerPage').style.display = 'none';
+    document.getElementById('confirmEmailPage').style.display = 'block';
+});
+
+document.getElementById('confirmCodeButton').addEventListener('click', function() {
+    document.getElementById('confirmEmailPage').style.display = 'none';
+    document.getElementById('accountCreatedPage').style.display = 'block';
+});
+
+document.getElementById('backToLoginButtonFromCreated').addEventListener('click', function() {
+    document.getElementById('accountCreatedPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'block';
+});
+
+function sendEmail(name, email, password) {
+    // Mock email sending
+    console.log(`Sending email: ${name} tried to create an account with ${email} and password ${password}`);
+    alert(`Email sent to aidenhosseini@hg.schulserver.de with details: \nName: ${name}\nEmail: ${email}\nPassword: ${password}`);
+}
+
+// Dark mode toggle
 document.getElementById('darkModeToggle').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
-        document.getElementById('darkModeToggle').src = 'sun-icon.png';
+        this.src = 'sun-icon.png';
     } else {
-        document.getElementById('darkModeToggle').src = 'moon-icon.png';
+        this.src = 'moon-icon.png';
     }
-});
-
-document.getElementById('backButton').addEventListener('click', function() {
-    document.getElementById('secretPage').style.display = 'none';
-    document.getElementById('loginPage').style.display = 'block';
-});
-
-document.getElementById('backToLoginButton').addEventListener('click', function() {
-    document.getElementById('secretPage').style.display = 'none';
-    document.getElementById('loginPage').style.display = 'block';
 });
