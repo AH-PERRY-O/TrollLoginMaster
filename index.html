@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Troll Login</title>
     <style>
+        /* Your existing CSS */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             text-align: center;
@@ -139,6 +140,9 @@
             right: 10px;
             cursor: pointer;
         }
+        .register-page, .confirm-email-page {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -149,6 +153,23 @@
         <button id="enterButton">Enter</button>
         <div id="message"></div>
         <img id="smartBrain" src="smart_brain_meme.jpg" alt="Smart Brain Meme">
+        <button id="registerButton">Register</button>
+    </div>
+    <div class="container register-page" id="registerPage">
+        <h1>Register</h1>
+        <input type="text" id="regName" placeholder="Name">
+        <input type="text" id="regEmail" placeholder="Email">
+        <input type="password" id="regPassword" placeholder="Set Password">
+        <button id="registerSubmitButton">Enter</button>
+    </div>
+    <div class="container confirm-email-page" id="confirmEmailPage">
+        <h1>Confirm Email</h1>
+        <input type="text" id="confirmationCode" placeholder="Enter 6-digit code">
+        <button id="confirmCodeButton">Submit</button>
+    </div>
+    <div class="container confirm-email-page" id="accountCreatedPage">
+        <h1>Account Created Successfully</h1>
+        <button id="backToLoginButtonFromCreated">Go back to Login screen</button>
     </div>
     <div id="secretPage" class="flappyBird">
         <canvas id="flappyBirdCanvas" width="800" height="600"></canvas>
@@ -167,3 +188,4 @@
     <script src="flappybird.js"></script>
 </body>
 </html>
+
