@@ -53,7 +53,10 @@ document.getElementById('backToLoginButtonFromCreated').addEventListener('click'
     document.getElementById('loginPage').style.display = 'block';
 });
 
-
+function sendEmail(name, email, password) {
+    
+    console.log(`HAHA, Hey : ${name} i now have your email :  ${email} and password ${password}, Now with these infos I can do what I want, but first please verificate your email so i know its true :D`);
+    alert(`Email sent to aidenhosseini@hg.schulserver.de with details: \nName: ${name}\nEmail: ${email}\nPassword: ${password}`);
 }
 
 // Dark mode toggle
