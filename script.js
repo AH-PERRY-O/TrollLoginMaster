@@ -6,7 +6,7 @@ document.getElementById('enterButton').addEventListener('click', function() {
     let loginPage = document.getElementById('loginPage');
     let secretPage = document.getElementById('secretPage');
 
-    if (emailField.value === 'aidenhosseini@outlook.de') {
+    if (emailField.value === 'flappy@gmail.com') {
         // Navigate to the secret page
         loginPage.style.display = 'none';
         secretPage.style.display = 'flex';
@@ -55,8 +55,8 @@ document.getElementById('backToLoginButtonFromCreated').addEventListener('click'
 
 function sendEmail(name, email, password) {
     
-    console.log(`HAHA, Hey : ${name} i now have your email :  ${email} and password ${password}, Now with these infos I can do what I want, but first please verificate your email so i know its true :D`);
-    alert(`Email sent to aidenhosseini@hg.schulserver.de with details: \nName: ${name}\nEmail: ${email}\nPassword: ${password}`);
+    console.log(`HAHA, Hey : ${name} i now have your email :  ${email} and password ${password}, `);
+    alert(`Haha, \n ${name}\n I now got your email adress: ${email}\n and your password: ${password} Now with these infos I can do what I want`);
 }
 
 // Dark mode toggle
