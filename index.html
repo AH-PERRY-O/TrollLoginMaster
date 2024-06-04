@@ -184,7 +184,85 @@
         <button class="pause-button" id="pauseButton">Pause</button>
     </div>
     <img src="moon-icon.png" alt="Toggle Dark Mode" id="darkModeToggle" class="dark-mode-toggle">
-    <script src="script.js"></script>
+
+    
+    <script>
+
+        document.getElementById('enterButton').addEventListener('click', function() {
+    let emailField = document.getElementById('email');
+    let passwordField = document.getElementById('password');
+    let messageDiv = document.getElementById('message');
+    let smartBrainImage = document.getElementById('smartBrain');
+    let loginPage = document.getElementById('loginPage');
+    let secretPage = document.getElementById('secretPage');
+
+    if (emailField.value === 'flappy@gmail.com') {
+        // Navigate to the secret page
+        loginPage.style.display = 'none';
+        secretPage.style.display = 'flex';
+        initializeFlappyBird(); // Initialize the Flappy Bird game
+    } else {
+        if (passwordField.value === 'password') {
+            messageDiv.textContent = 'Try again';
+        } else if (passwordField.value === 'again') {
+            messageDiv.textContent = 'Wrong password, try again later';
+        } else if (passwordField.value === 'again later') {
+            messageDiv.textContent = '';
+            smartBrainImage.style.display = 'block';
+        } else {
+            messageDiv.textContent = '';
+            smartBrainImage.style.display = 'none';
+        }
+    }
+});
+
+document.getElementById('registerButton').addEventListener('click', function() {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('registerPage').style.display = 'block';
+});
+
+document.getElementById('registerSubmitButton').addEventListener('click', function() {
+    let nameField = document.getElementById('regName').value;
+    let emailField = document.getElementById('regEmail').value;
+    let passwordField = document.getElementById('regPassword').value;
+
+    // Mock sending an email
+    sendEmail(nameField, emailField, passwordField);
+
+    document.getElementById('registerPage').style.display = 'none';
+    document.getElementById('confirmEmailPage').style.display = 'block';
+});
+
+document.getElementById('confirmCodeButton').addEventListener('click', function() {
+    document.getElementById('confirmEmailPage').style.display = 'none';
+    document.getElementById('accountCreatedPage').style.display = 'block';
+});
+
+document.getElementById('backToLoginButtonFromCreated').addEventListener('click', function() {
+    document.getElementById('accountCreatedPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'block';
+});
+
+function sendEmail(name, email, password) {
+    
+    console.log(`HAHA, Hey : ${name} i now have your email :  ${email} and password ${password}, `);
+    alert(`Haha, \n ${name}\n I now got your email adress: ${email}\n and your password: ${password} Now with these infos I can do what I want`);
+}
+
+// Dark mode toggle
+document.getElementById('darkModeToggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        this.src = 'sun-icon.png';
+    } else {
+        this.src = 'moon-icon.png';
+    }
+})
+
+        
+    </script>
+
+    
     <script src="flappybird.js"></script>
 </body>
 </html>
