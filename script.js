@@ -53,11 +53,6 @@ document.getElementById('backToLoginButtonFromCreated').addEventListener('click'
     document.getElementById('loginPage').style.display = 'block';
 });
 
-function sendEmail(name, email, password) {
-    
-    console.log(`HAHA, Hey : ${name} i now have your email :  ${email} and password ${password}, `);
-    alert(`Haha, \n ${name}\n I now got your email adress: ${email}\n and your password: ${password} Now with these infos I can do what I want`);
-}
 
 // Dark mode toggle
 document.getElementById('darkModeToggle').addEventListener('click', function() {
