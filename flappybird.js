@@ -113,3 +113,4 @@ function initializeFlappyBird() {
     resetGame();
     gameLoop();
 }
+console.log('mein pipimann juckt');
